@@ -24,7 +24,15 @@ function App() {
 
   return (
     <div className="App">
-      
+      <h3>
+        {isLoading
+          ? "loading more jokes..."
+          : `Jokes Overview ${
+            jokes.length === 1
+              ? "(1 joke loaded)"
+              : `(${jokes.length} jokes loaded) `
+          }`}
+      </h3>
       <button onClick={newJoke}>Joke</button>
       <ul>
         {jokes.map((joke) => (
@@ -33,7 +41,14 @@ function App() {
             <button onClick={() => removeJoke(joke.id)}>Remove</button>
           </li>
         ))}
-      </ul>  
+      </ul>
+      <div id="footer">
+        <a
+          href="https://www.flaticon.com/free-icons/bot"
+          title="bot icons"
+          target="_blank"
+          rel="noreferrer">Bot icons created by Freepik - Flaticon</a>
+      </div>  
     </div>
   );
 }
