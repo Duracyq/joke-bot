@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// import robotImage from '../public/robot.png'
 import './App.css';
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className="App-header" id="header">
+        <img src={process.env.PUBLIC_URL + '/robot.png'} alt="Robot" id='robot'/>
+        <h1>joke-bot</h1>
+      </div>
       <h3 className='App-header'>
         {isLoading
           ? "loading more jokes..."
@@ -36,6 +41,7 @@ function App() {
       <div
         onClick={newJoke}
         id="joke-button" >Joke</div>
+      <div className='App-container'>
       <ul>
         {jokes.map((joke) => (
           <li key={joke.id}>
@@ -44,7 +50,14 @@ function App() {
           </li>
         ))}
       </ul>
-      <div id="footer">
+      </div>
+      <div class="footer">
+        <p>API used: <a
+          href='https://sv443.net/jokeapi/v2/'
+          title='JokeAPI'
+          target='_blank'
+          rel="noreferer noreferrer">JokeAPI</a>
+        </p>
         <a
           href="https://www.flaticon.com/free-icons/bot"
           title="bot icons"

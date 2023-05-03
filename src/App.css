@@ -5,14 +5,15 @@ a::after{
   color: #61dafb;
 }
 
-.App {
-  text-align: center;
-}
 body {
   background-color: #282c34;
 }
+.App {
+  height: 100vh;
+}
 
 .App-header {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,19 +21,34 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-header header {
+  background-color: #1a1c22; 
+  flex-direction: row;
+}
+
+.App-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
 .App-link {
   color: #61dafb;
 }
 
-#footer {
-  margin: 20px;
-  position: absolute;
-  bottom: 0;
+.footer {
+  color: #fff;
+  background-color: #1a1c22;
+  padding: 20px;
+  /* position: absolute; */
+  /* bottom: 0; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
+}
+.footer p {
+  margin: 0 0 10px 0;
 }
 
 #joke-button {
@@ -43,9 +59,16 @@ body {
   justify-content: center;
   background-color: red;
   width: 60px;
-  height: (auto+30px);
 }
 #joke-button:hover {
   cursor: pointer;
   opacity: 80%;
+}
+
+#robot {
+  position: fixed;
+  left: 0;
+  margin: 20px;
+  width: 50px;
+  height: 50px
 }
