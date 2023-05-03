@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3>
+      <h3 className='App-header'>
         {isLoading
           ? "loading more jokes..."
           : `Jokes Overview ${
@@ -33,12 +33,14 @@ function App() {
               : `(${jokes.length} jokes loaded) `
           }`}
       </h3>
-      <button onClick={newJoke}>Joke</button>
+      <div
+        onClick={newJoke}
+        id="joke-button" >Joke</div>
       <ul>
         {jokes.map((joke) => (
           <li key={joke.id}>
             {joke.setup} {joke.delivery}
-            <button onClick={() => removeJoke(joke.id)}>Remove</button>
+            <button onClick={() => removeJoke(joke.id)} id='remove-button'>Remove</button>
           </li>
         ))}
       </ul>
